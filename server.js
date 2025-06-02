@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const fs = require('fs').promises;
 const path = require('path');
 const bcrypt = require('bcryptjs');
@@ -540,4 +540,4 @@ app.delete('/api/delete-account', async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`الخادم يعمل على المنفذ ${PORT}`);
-});
+});*/
