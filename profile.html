@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي للمعلم - منصة التعليم الإلكتروني</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>🎓 منصة التعليم</h2>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">الرئيسية</a>
+                <a href="teachers.html" class="nav-link">المعلمون</a>
+                <a href="lessons.html" class="nav-link">الدروس</a>
+            </div>
+            <div class="nav-auth" id="navAuth">
+                <a href="login.html" class="btn btn-outline">تسجيل الدخول</a>
+                <a href="register.html" class="btn btn-primary">إنشاء حساب</a>
+            </div>
+            <div class="nav-user hidden" id="navUser">
+                <div class="user-dropdown">
+                    <button class="user-name-btn" id="userName" onclick="toggleUserMenu()"></button>
+                    <div class="user-menu" id="userMenu">
+                        <a href="teacher-dashboard.html" id="dashboardLink" class="hidden user-menu-item">لوحة التحكم</a>
+                        <button onclick="openSettings()" class="user-menu-item">⚙️ الإعدادات</button>
+                        <button onclick="logout()" class="user-menu-item logout-btn">🚪 تسجيل الخروج</button>
+                        <div class="user-email" id="userEmail">example@gmail.com</div>
+                    </div>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <main style="padding: 2rem 0; min-height: 80vh;">
+        <div class="container">
+            <!-- ملف المعلم الشخصي -->
+            <div id="teacherProfile">
+                <div class="loading" style="text-align: center; padding: 4rem;">جاري تحميل الملف الشخصي...</div>
+            </div>
+
+            <!-- دروس المعلم -->
+            <div id="teacherLessons" style="margin-top: 3rem;">
+                <div class="loading" style="text-align: center; padding: 4rem;">جاري تحميل الدروس...</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>منصة التعليم</h3>
+                    <p>منصة تعليمية شاملة تهدف إلى تطوير التعليم العربي الرقمي</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="teachers.html">المعلمون</a></li>
+                        <li><a href="lessons.html">الدروس</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>الحساب</h4>
+                    <ul>
+                        <li><a href="login.html">تسجيل الدخول</a></li>
+                        <li><a href="register.html">إنشاء حساب</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 منصة التعليم الإلكتروني. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        let currentTeacher = null;
+        let teacherLessons = [];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuthStatus();
+            loadTeacherProfile();
+        });
+
+        async function loadTeacherProfile() {
+            // الحصول على معرف المعلم من الرابط
+            const urlParams = new URLSearchParams(window.location.search);
+            const teacherId = urlParams.get('id');
+
+            if (!teacherId) {
+                showError('معرف المعلم غير صحيح');
+                return;
+            }
+
+            try {
+                // تحميل بيانات المعلم
+                const teacherResponse = await fetch('/api/teachers');
+                const teachers = await teacherResponse.json();
+                
+                currentTeacher = teachers.find(t => t.id == teacherId);
+                
+                if (!currentTeacher) {
+                    showError('المعلم غير موجود');
+                    return;
+                }
+
+                // تحميل دروس المعلم
+                const lessonsResponse = await fetch('/api/lessons');
+                const allLessons = await lessonsResponse.json();
+                
+                teacherLessons = allLessons.filter(lesson => lesson.teacherId == teacherId);
+
+                displayTeacherProfile();
+                displayTeacherLessons();
+                
+            } catch (error) {
+                console.error('خطأ في تحميل الملف الشخصي:', error);
+                showError('خطأ في الاتصال بالخادم');
+            }
+        }
+
+        function displayTeacherProfile() {
+            document.title = `${currentTeacher.firstName} ${currentTeacher.lastName} - منصة التعليم الإلكتروني`;
+            
+            const profileSection = document.getElementById('teacherProfile');
+            profileSection.innerHTML = `
+                <div style="background: var(--card-bg); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    <!-- خلفية المعلم -->
+                    <div style="background: linear-gradient(135deg, #2563EB, #059669); height: 200px; position: relative;">
+                        <div style="position: absolute; bottom: -50px; right: 2rem;">
+                            <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #F59E0B, #EF4444); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 700; border: 6px solid white; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
+                                ${currentTeacher.firstName.charAt(0)}${currentTeacher.lastName.charAt(0)}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- معلومات المعلم -->
+                    <div style="padding: 4rem 2rem 2rem;">
+                        <div style="display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start;">
+                            <div>
+                                <h1 style="font-size: 2.5rem; font-weight: 700; color: var(--text-color); margin-bottom: 0.5rem;">${currentTeacher.firstName} ${currentTeacher.lastName}</h1>
+                                <p style="font-size: 1.25rem; color: var(--primary-color); font-weight: 600; margin-bottom: 1rem;">${currentTeacher.specialization || 'معلم'}</p>
+                                
+                                ${currentTeacher.bio ? `<p style="color: var(--secondary-color); line-height: 1.7; margin-bottom: 2rem; font-size: 1.125rem;">${currentTeacher.bio}</p>` : ''}
+                                
+                                <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                                    <div style="text-align: center;">
+                                        <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">${currentTeacher.lessonsCount}</div>
+                                        <div style="color: var(--secondary-color); font-size: 0.875rem;">درس منشور</div>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">${currentTeacher.experience || 0}</div>
+                                        <div style="color: var(--secondary-color); font-size: 0.875rem;">سنة خبرة</div>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">4.9</div>
+                                        <div style="color: var(--secondary-color); font-size: 0.875rem;">تقييم</div>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">247</div>
+                                        <div style="color: var(--secondary-color); font-size: 0.875rem;">طالب</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <button onclick="contactTeacher()" class="btn btn-primary">📧 تواصل مع المعلم</button>
+                                <button onclick="followTeacher()" class="btn btn-outline">⭐ متابعة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function displayTeacherLessons() {
+            const lessonsSection = document.getElementById('teacherLessons');
+            
+            if (teacherLessons.length === 0) {
+                lessonsSection.innerHTML = `
+                    <div style="background: var(--card-bg); padding: 3rem; border-radius: 16px; text-align: center;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">📚</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-color);">لا توجد دروس منشورة</h3>
+                        <p style="color: var(--secondary-color);">لم ينشر هذا المعلم أي دروس حتى الآن.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            lessonsSection.innerHTML = `
+                <div style="background: var(--card-bg); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                    <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-color);">دروس ${currentTeacher.firstName} ${currentTeacher.lastName}</h2>
+                    
+                    <div class="teacher-lessons-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                        ${teacherLessons.map(lesson => `
+                            <div class="teacher-lesson-card" style="border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'">
+                                <!-- مقدمة الدرس -->
+                                <div class="lesson-media" style="aspect-ratio: 16/9; background: linear-gradient(135deg, #2563EB, #059669); display: flex; align-items: center; justify-content: center; position: relative;">
+                                    ${lesson.youtubeUrl ? `
+                                        <div style="color: white; font-size: 3rem;">📹</div>
+                                        <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.7); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem;">
+                                            ${lesson.duration || 30} دقيقة
+                                        </div>
+                                    ` : lesson.pdfUrl ? `
+                                        <div style="color: white; font-size: 3rem;">📄</div>
+                                        <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.7); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem;">PDF</div>
+                                    ` : `
+                                        <div style="color: white; font-size: 3rem;">📚</div>
+                                    `}
+                                </div>
+
+                                <!-- محتوى الدرس -->
+                                <div class="lesson-content" style="padding: 1.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                                        <span style="background: #EBF4FF; color: #2563EB; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">${lesson.subject}</span>
+                                        <span style="color: var(--secondary-color); font-size: 0.875rem;">📅 ${formatArabicDate(lesson.createdAt)}</span>
+                                    </div>
+
+                                    <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-color); line-height: 1.3;">${lesson.title}</h3>
+                                    
+                                    <p style="color: var(--secondary-color); line-height: 1.6; margin-bottom: 1.5rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">${lesson.description}</p>
+
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                        <div class="teacher-lesson-stats" style="display: flex; gap: 1rem; font-size: 0.875rem; color: var(--secondary-color);">
+                                            <span>👁️ ${lesson.views || 0}</span>
+                                            <span>👍 ${lesson.likes || 0}</span>
+                                        </div>
+                                    </div>
+
+                                    <a href="lesson-view.html?id=${lesson.id}" class="btn btn-primary" style="width: 100%; text-align: center; text-decoration: none;">مشاهدة الدرس</a>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function showError(message) {
+            document.getElementById('teacherProfile').innerHTML = `
+                <div style="text-align: center; padding: 4rem;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">❌</div>
+                    <h2 style="font-size: 1.5rem; font-weight: 600; color: #EF4444; margin-bottom: 1rem;">${message}</h2>
+                    <a href="teachers.html" class="btn btn-primary">← العودة إلى المعلمين</a>
+                </div>
+            `;
+            document.getElementById('teacherLessons').innerHTML = '';
+        }
+
+        function contactTeacher() {
+            alert('ميزة التواصل مع المعلم ستكون متاحة قريباً');
+        }
+
+        function followTeacher() {
+            alert('ميزة متابعة المعلم ستكون متاحة قريباً');
+        }
+    </script>
+</body>
+</html>

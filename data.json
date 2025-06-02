@@ -1,0 +1,229 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Amir",
+      "lastName": "Krim",
+      "username": "Amir krim",
+      "email": "www.amirkrim@gmail.com",
+      "password": "$2b$10$TuRNj7e1rUpnAnvnJQXdWupQVH2TFnwmD1onqKp5k1i2M3bwl6AYe",
+      "userType": "teacher",
+      "specialization": "الرياضيات",
+      "experience": 5,
+      "bio": null,
+      "createdAt": "2025-05-30T18:18:36.596Z"
+    },
+    {
+      "id": 2,
+      "firstName": "Amir",
+      "lastName": "Krim",
+      "username": "Amir Krim Said",
+      "email": "2413083@natechu.com",
+      "password": "$2b$10$uZrK6DGpcG9TMSVP/qNRu.FKVJiFsBIiywIGwxDhZcm2nbtUSRlui",
+      "userType": "teacher",
+      "specialization": "الرياضيات",
+      "experience": 5,
+      "bio": "مرحبا",
+      "createdAt": "2025-05-30T18:30:31.716Z"
+    },
+    {
+      "id": 3,
+      "firstName": "Amir",
+      "lastName": "Krim",
+      "username": "Amir krim٨",
+      "email": "www.amirkrimthree@gmail.com",
+      "password": "$2b$10$gL538eMGWGq8wd/5hxckIeRbWmwcU2kKV3/H1fz9jr5k8NbwYkS3.",
+      "userType": "student",
+      "specialization": null,
+      "experience": 0,
+      "bio": null,
+      "createdAt": "2025-05-30T22:10:58.454Z"
+    },
+    {
+      "id": 4,
+      "firstName": "Amir ",
+      "lastName": "Krim",
+      "username": "Amir_krara",
+      "email": "www.admkrim@gmail.com",
+      "password": "$2b$10$43LH1kfc.1MKQmy4GVjtLugpkYwB.VngoMDWMUPjn.0rf1Fv.OzGG",
+      "userType": "teacher",
+      "specialization": "أخرى",
+      "experience": 1,
+      "bio": null,
+      "createdAt": "2025-06-02T14:48:57.912Z"
+    }
+  ],
+  "lessons": [
+    {
+      "id": 2,
+      "title": "الأدب",
+      "description": "لغة الأدب العربي",
+      "subject": "الرياضيات",
+      "teacherId": 2,
+      "youtubeUrl": "https://youtu.be/_2NYn2QJ8Ho?si=3FKHE4Y_mxetqnIW",
+      "pdfUrl": null,
+      "duration": 9,
+      "views": 40,
+      "likes": 19,
+      "createdAt": "2025-05-30T18:37:24.628Z",
+      "likedBy": [
+        "guest_::ffff:172.31.128.117",
+        2,
+        "guest_::ffff:172.31.128.65"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "برمجة الجزئ الأول",
+      "description": "الصف الأول الجامعي",
+      "subject": "البرمجة",
+      "teacherId": 1,
+      "youtubeUrl": null,
+      "pdfUrl": null,
+      "duration": 0,
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2025-05-30T21:27:49.823Z"
+    },
+    {
+      "id": 3,
+      "title": "برمجة الجزئ الأول",
+      "description": "الصف الأول الجامعي",
+      "subject": "البرمجة",
+      "teacherId": 1,
+      "youtubeUrl": null,
+      "pdfUrl": null,
+      "duration": 0,
+      "views": 20,
+      "likes": 3,
+      "createdAt": "2025-05-30T21:27:49.829Z"
+    },
+    {
+      "id": 4,
+      "title": "لغة الجبر",
+      "description": "حسنا الان و بشكل منظم و بدون أي تعقيدات لنقوم بهذه التحسينات بالترتيب:- \n١- في ملف lesson-view.html تأكد أن كل شخص مسموح له بضغطه واحده على زر الاعجابات و يتم إلغائها إذا ضغط مجددا علي الزر ، تاكد ايضا ان تاريخ نشر الدرس يتم عرضه باستخدام التاريخ الميلادي وليس الهجري.\n٢- ثم اريد تعديل هيدر المنصة أريد نقل مكان إسم المستخدم الموجود في الهيدر مكان زر تسجيل الخروج ، ثم نقل ذر تسجيل الخروج وجعلة داخل نافذه منسدله التي ستظهر عند الضغط على اسم المستخدم.\n٣- الأن تحسين النافذه المنسدله التي تظهر عند الضغط علي إسم المستخدم ، يجب ان يكون داخلها ذرين زر الإعدادات أسفلة زر تسجيل الخروج واسفلهم سيكون مكتوب حساب جوجل الذي تم التسجيل به.\n٤- وصف زر الاعدادات الذي أضفناه ، الذر يجب ان يفتح نافذه يوجد بها امكانيه تغيير اسم المستخدم مع زر حفظ التغييرات ، ثم زر تسجيل الخروج وزر اخر وهو حذف الحساب.\nقم بالأمر بشكل منظم مع الحفاظ علي الوظائف الحالية فقط نفذ ما طلبت بشكل صحيح مع إضافة الأكواد في الأماكن الصحيحة.حسنا الان و بشكل منظم و بدون أي تعقيدات لنقوم بهذه التحسينات بالترتيب:- \n١- في ملف lesson-view.html تأكد أن كل شخص مسموح له بضغطه واحده على زر الاعجابات و يتم إلغائها إذا ضغط مجددا علي الزر ، تاكد ايضا ان تاريخ نشر الدرس يتم عرضه باستخدام التاريخ الميلادي وليس الهجري.\n٢- ثم اريد تعديل هيدر المنصة أريد نقل مكان إسم المستخدم الموجود في الهيدر مكان زر تسجيل الخروج ، ثم نقل ذر تسجيل الخروج وجعلة داخل نافذه منسدله التي ستظهر عند الضغط على اسم المستخدم.\n٣- الأن تحسين النافذه المنسدله التي تظهر عند الضغط علي إسم المستخدم ، يجب ان يكون داخلها ذرين زر الإعدادات أسفلة زر تسجيل الخروج واسفلهم سيكون مكتوب حساب جوجل الذي تم التسجيل به.\n٤- وصف زر الاعدادات الذي أضفناه ، الذر يجب ان يفتح نافذه يوجد بها امكانيه تغيير اسم المستخدم مع زر حفظ التغييرات ، ثم زر تسجيل الخروج وزر اخر وهو حذف الحساب.\nقم بالأمر بشكل منظم مع الحفاظ علي الوظائف الحالية فقط نفذ ما طلبت بشكل صحيح مع إضافة الأكواد في الأماكن الصحيحة.حسنا الان و بشكل منظم و بدون أي تعقيدات لنقوم بهذه التحسينات بالترتيب:- \n١- في ملف lesson-view.html تأكد أن كل شخص مسموح له بضغطه واحده على زر الاعجابات و يتم إلغائها إذا ضغط مجددا علي الزر ، تاكد ايضا ان تاريخ نشر الدرس يتم عرضه باستخدام التاريخ الميلادي وليس الهجري.\n٢- ثم اريد تعديل هيدر المنصة أريد نقل مكان إسم المستخدم الموجود في الهيدر مكان زر تسجيل الخروج ، ثم نقل ذر تسجيل الخروج وجعلة داخل نافذه منسدله التي ستظهر عند الضغط على اسم المستخدم.\n٣- الأن تحسين النافذه المنسدله التي تظهر عند الضغط علي إسم المستخدم ، يجب ان يكون داخلها ذرين زر الإعدادات أسفلة زر تسجيل الخروج واسفلهم سيكون مكتوب حساب جوجل الذي تم التسجيل به.\n٤- وصف زر الاعدادات الذي أضفناه ، الذر يجب ان يفتح نافذه يوجد بها امكانيه تغيير اسم المستخدم مع زر حفظ التغييرات ، ثم زر تسجيل الخروج وزر اخر وهو حذف الحساب.\nقم بالأمر بشكل منظم مع الحفاظ علي الوظائف الحالية فقط نفذ ما طلبت بشكل صحيح مع إضافة الأكواد في الأماكن الصحيحة.إليك وصف كامل لملف Control.js إذا كنت ستعيد كتابته بشكل صحيح:\n\nالهدف من الملف:\nإنشاء نظام تأخير تحميل الصور (Lazy Loading) مع الحفاظ على التخطيط الأصلي للمعرض.\n\nالوظائف الأساسية المطلوبة:\n1. كلاس ImageDelayController\nclass ImageDelayController {\n    constructor() {\n        this.originalSources = new Map();\n        this.isFirstLoad = true;\n        this.delayDuration = 1000;\n    }\n}\n2. دالة التهيئة initialize()\nتحديد إذا كان هذا أول تحميل\nبدء عملية التأخير\nإعداد مراقب الصور الجديدة\n3. دالة تطبيق التأخير applyDelayToExistingImages()\nالبحث عن جميع الصور في الصفحة\nتطبيق التأخير على كل صورة\nحفظ المصادر الأصلية\n4. دالة تأخير الصورة delayImage(img)\nحفظ المصدر الأصلي\nإنشاء placeholder مؤقت\nاستبدال الصورة بـ placeholder\n5. دالة إنشاء placeholder\nإنشاء عنصر تحميل مؤقت\nتطبيق نفس أبعاد الصورة الأصلية\nإضافة تأثيرات بصرية للتحميل\n6. دالة بدء التحميل startImageLoading()\nإعداد Intersection Observer\nتحميل الصور عند ظهورها في الشاشة\nبدون أي تدخل في ترتيب المعرض\n7. دالة تحميل صورة واحدة loadSingleImage(img)\nloadSingleImage(img) {\n    const originalData = this.originalSources.get(img);\n    \n    if (originalData && img.placeholderElement) {\n        const tempImg = new Image();\n        \n        tempImg.onload = () => {\n            // إزالة placeholder\n            img.placeholderElement.remove();\n            \n            // استعادة الصورة الأصلية\n            img.src = originalData.src;\n            img.style.display = 'block';\n            img.style.opacity = '1';\n            \n            // تنظيف البيانات\n            this.originalSources.delete(img);\n            \n            // لا تدخل في ترتيب المعرض - اتركه للملفات الأخرى\n        };\n        \n        tempImg.onerror = () => {\n            // عرض صورة احتياطية\n            img.placeholderElement.remove();\n            img.src = 'Imges/All img icon.png';\n            img.style.display = 'block';\n            this.originalSources.delete(img);\n        };\n        \n        tempImg.src = originalData.src;\n    }\n}\nما يجب تجنبه:\nلا تستدعي أي دوال ترتيب masonry\nلا تتدخل في تخطيط المعرض\nلا تستدعي refreshLayout أو reorganizeGallery\nاترك المعرض يرتب نفسه طبيعياً من simple-gallery.html\nالتهيئة النهائية:\n(function() {\n    console.log('تحضير نظام تأخير الصور...');\n    window.imageDelayController = new ImageDelayController();\n})();\nالهدف: نظام تأخير بسيط يحمل الصور عند الحاجة دون التدخل في الترتيب الطبيعي للمعرض.\n\n\nScroll to latest\n\nMessage Agent…",
+      "subject": "الرياضيات",
+      "teacherId": 2,
+      "youtubeUrl": "https://youtu.be/xY4EX0zcQKY?si=rhtFKlIM2OXMe2Qg",
+      "pdfUrl": "https://1drv.ms/b/c/005125E1E54E8EEE/ESqoZhy6DDpEgqPXGIUhGn0Bydj1iLIQm8u5BS8sSyZajA",
+      "duration": 300,
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2025-05-31T00:01:18.307Z"
+    },
+    {
+      "id": 5,
+      "title": "لغة الجبر",
+      "description": "حسنا الان و بشكل منظم و بدون أي تعقيدات لنقوم بهذه التحسينات بالترتيب:- \n١- في ملف lesson-view.html تأكد أن كل شخص مسموح له بضغطه واحده على زر الاعجابات و يتم إلغائها إذا ضغط مجددا علي الزر ، تاكد ايضا ان تاريخ نشر الدرس يتم عرضه باستخدام التاريخ الميلادي وليس الهجري.\n٢- ثم اريد تعديل هيدر المنصة أريد نقل مكان إسم المستخدم الموجود في الهيدر مكان زر تسجيل الخروج ، ثم نقل ذر تسجيل الخروج وجعلة داخل نافذه منسدله التي ستظهر عند الضغط على اسم المستخدم.\n٣- الأن تحسين النافذه المنسدله التي تظهر عند الضغط علي إسم المستخدم ، يجب ان يكون داخلها ذرين زر الإعدادات أسفلة زر تسجيل الخروج واسفلهم سيكون مكتوب حساب جوجل الذي تم التسجيل به.\n٤- وصف زر الاعدادات الذي أضفناه ، الذر يجب ان يفتح نافذه يوجد بها امكانيه تغيير اسم المستخدم مع زر حفظ التغييرات ، ثم زر تسجيل الخروج وزر اخر وهو حذف الحساب.\nقم بالأمر بشكل منظم مع الحفاظ علي الوظائف الحالية فقط نفذ ما طلبت بشكل صحيح مع إضافة الأكواد في الأماكن الصحيحة.حسنا الان و بشكل منظم و بدون أي تعقيدات لنقوم بهذه التحسينات بالترتيب:- \n١- في ملف lesson-view.html تأكد أن كل شخص مسموح له بضغطه واحده على زر الاعجابات و يتم إلغائها إذا ضغط مجددا علي الزر ، تاكد ايضا ان تاريخ نشر الدرس يتم عرضه باستخدام التاريخ الميلادي وليس الهجري.\n٢- ثم اريد تعديل هيدر المنصة أريد نقل مكان إسم المستخدم الموجود في الهيدر مكان زر تسجيل الخروج ، ثم نقل ذر تسجيل الخروج وجعلة داخل نافذه منسدله التي ستظهر عند الضغط على اسم المستخدم.\n٣- الأن تحسين النافذه المنسدله التي تظهر عند الضغط علي إسم المستخدم ، يجب ان يكون داخلها ذرين زر الإعدادات أسفلة زر تسجيل الخروج واسفلهم سيكون مكتوب حساب جوجل الذي تم التسجيل به.\n٤- وصف زر الاعدادات الذي أضفناه ، الذر يجب ان يفتح نافذه يوجد بها امكانيه تغيير اسم المستخدم مع زر حفظ التغييرات ، ثم زر تسجيل الخروج وزر اخر وهو حذف الحساب.\nقم بالأمر بشكل منظم مع الحفاظ علي الوظائف الحالية فقط نفذ ما طلبت بشكل صحيح مع إضافة الأكواد في الأماكن الصحيحة.حسنا الان و بشكل منظم و بدون أي تعقيدات لنقوم بهذه التحسينات بالترتيب:- \n١- في ملف lesson-view.html تأكد أن كل شخص مسموح له بضغطه واحده على زر الاعجابات و يتم إلغائها إذا ضغط مجددا علي الزر ، تاكد ايضا ان تاريخ نشر الدرس يتم عرضه باستخدام التاريخ الميلادي وليس الهجري.\n٢- ثم اريد تعديل هيدر المنصة أريد نقل مكان إسم المستخدم الموجود في الهيدر مكان زر تسجيل الخروج ، ثم نقل ذر تسجيل الخروج وجعلة داخل نافذه منسدله التي ستظهر عند الضغط على اسم المستخدم.\n٣- الأن تحسين النافذه المنسدله التي تظهر عند الضغط علي إسم المستخدم ، يجب ان يكون داخلها ذرين زر الإعدادات أسفلة زر تسجيل الخروج واسفلهم سيكون مكتوب حساب جوجل الذي تم التسجيل به.\n٤- وصف زر الاعدادات الذي أضفناه ، الذر يجب ان يفتح نافذه يوجد بها امكانيه تغيير اسم المستخدم مع زر حفظ التغييرات ، ثم زر تسجيل الخروج وزر اخر وهو حذف الحساب.\nقم بالأمر بشكل منظم مع الحفاظ علي الوظائف الحالية فقط نفذ ما طلبت بشكل صحيح مع إضافة الأكواد في الأماكن الصحيحة.إليك وصف كامل لملف Control.js إذا كنت ستعيد كتابته بشكل صحيح:\n\nالهدف من الملف:\nإنشاء نظام تأخير تحميل الصور (Lazy Loading) مع الحفاظ على التخطيط الأصلي للمعرض.\n\nالوظائف الأساسية المطلوبة:\n1. كلاس ImageDelayController\nclass ImageDelayController {\n    constructor() {\n        this.originalSources = new Map();\n        this.isFirstLoad = true;\n        this.delayDuration = 1000;\n    }\n}\n2. دالة التهيئة initialize()\nتحديد إذا كان هذا أول تحميل\nبدء عملية التأخير\nإعداد مراقب الصور الجديدة\n3. دالة تطبيق التأخير applyDelayToExistingImages()\nالبحث عن جميع الصور في الصفحة\nتطبيق التأخير على كل صورة\nحفظ المصادر الأصلية\n4. دالة تأخير الصورة delayImage(img)\nحفظ المصدر الأصلي\nإنشاء placeholder مؤقت\nاستبدال الصورة بـ placeholder\n5. دالة إنشاء placeholder\nإنشاء عنصر تحميل مؤقت\nتطبيق نفس أبعاد الصورة الأصلية\nإضافة تأثيرات بصرية للتحميل\n6. دالة بدء التحميل startImageLoading()\nإعداد Intersection Observer\nتحميل الصور عند ظهورها في الشاشة\nبدون أي تدخل في ترتيب المعرض\n7. دالة تحميل صورة واحدة loadSingleImage(img)\nloadSingleImage(img) {\n    const originalData = this.originalSources.get(img);\n    \n    if (originalData && img.placeholderElement) {\n        const tempImg = new Image();\n        \n        tempImg.onload = () => {\n            // إزالة placeholder\n            img.placeholderElement.remove();\n            \n            // استعادة الصورة الأصلية\n            img.src = originalData.src;\n            img.style.display = 'block';\n            img.style.opacity = '1';\n            \n            // تنظيف البيانات\n            this.originalSources.delete(img);\n            \n            // لا تدخل في ترتيب المعرض - اتركه للملفات الأخرى\n        };\n        \n        tempImg.onerror = () => {\n            // عرض صورة احتياطية\n            img.placeholderElement.remove();\n            img.src = 'Imges/All img icon.png';\n            img.style.display = 'block';\n            this.originalSources.delete(img);\n        };\n        \n        tempImg.src = originalData.src;\n    }\n}\nما يجب تجنبه:\nلا تستدعي أي دوال ترتيب masonry\nلا تتدخل في تخطيط المعرض\nلا تستدعي refreshLayout أو reorganizeGallery\nاترك المعرض يرتب نفسه طبيعياً من simple-gallery.html\nالتهيئة النهائية:\n(function() {\n    console.log('تحضير نظام تأخير الصور...');\n    window.imageDelayController = new ImageDelayController();\n})();\nالهدف: نظام تأخير بسيط يحمل الصور عند الحاجة دون التدخل في الترتيب الطبيعي للمعرض.\n\n\nScroll to latest\n\nMessage Agent…",
+      "subject": "الرياضيات",
+      "teacherId": 2,
+      "youtubeUrl": "https://youtu.be/xY4EX0zcQKY?si=rhtFKlIM2OXMe2Qg",
+      "pdfUrl": "https://1drv.ms/b/c/005125E1E54E8EEE/ESqoZhy6DDpEgqPXGIUhGn0Bydj1iLIQm8u5BS8sSyZajA",
+      "duration": 300,
+      "views": 1,
+      "likes": 5,
+      "createdAt": "2025-05-31T00:01:18.395Z"
+    },
+    {
+      "id": 6,
+      "title": "جبر",
+      "description": "رياضيال",
+      "subject": "الفيزياء",
+      "teacherId": 2,
+      "youtubeUrl": null,
+      "pdfUrl": "https://1drv.ms/b/c/005125E1E54E8EEE/ESqoZhy6DDpEgqPXGIUhGn0Bydj1iLIQm8u5BS8sSyZajA",
+      "duration": 9,
+      "views": 7,
+      "likes": 5,
+      "createdAt": "2025-05-31T00:06:57.038Z"
+    },
+    {
+      "id": 7,
+      "title": "جبر",
+      "description": "رياضيال",
+      "subject": "الفيزياء",
+      "teacherId": 2,
+      "youtubeUrl": null,
+      "pdfUrl": "https://1drv.ms/b/c/005125E1E54E8EEE/ESqoZhy6DDpEgqPXGIUhGn0Bydj1iLIQm8u5BS8sSyZajA",
+      "duration": 9,
+      "views": 3,
+      "likes": 1,
+      "createdAt": "2025-05-31T00:06:57.236Z",
+      "likedBy": [
+        2
+      ]
+    },
+    {
+      "id": 8,
+      "title": "أنا الفيزياء",
+      "description": "A serene and vibrant royal palace garden set in a historical Indian setting, with a majestic magical rose plant at its center, its tender shoots and leaves a deep emerald green, blooming with an abundance of roses in shades of soft pink, velvety red, and creamy white, their delicate petals gently swaying in the warm sunlight that filters through the intricate stone latticework of the palace's architecture, the atmosphere peaceful and enchanting, with the sweet fragrance of the roses filling the air, and the surrounding foliage a lush and verdant green, with a few ornate stone benches and meandering pathways that invite exploration and contemplation.الأن أجري فحص أعمق و منظم لجميع ملفات الموقع و إحفظه و إفهمة بشكل كاملالأن أجري فحص أعمق و منظم لجميع ملفات الموقع و إحفظه و إفهمة بشكل كامل",
+      "subject": "الفيزياء",
+      "teacherId": 2,
+      "youtubeUrl": "https://youtu.be/_2NYn2QJ8Ho?si=3FKHE4Y_mxetqnIW",
+      "pdfUrl": "https://1drv.ms/b/c/005125E1E54E8EEE/ESqoZhy6DDpEgqPXGIUhGn0Bydj1iLIQm8u5BS8sSyZajA",
+      "duration": 12,
+      "views": 0,
+      "likes": 0,
+      "likedBy": [],
+      "createdAt": "2025-05-31T09:23:05.262Z"
+    },
+    {
+      "id": 9,
+      "title": "أنا الفيزياء",
+      "description": "A serene and vibrant royal palace garden set in a historical Indian setting, with a majestic magical rose plant at its center, its tender shoots and leaves a deep emerald green, blooming with an abundance of roses in shades of soft pink, velvety red, and creamy white, their delicate petals gently swaying in the warm sunlight that filters through the intricate stone latticework of the palace's architecture, the atmosphere peaceful and enchanting, with the sweet fragrance of the roses filling the air, and the surrounding foliage a lush and verdant green, with a few ornate stone benches and meandering pathways that invite exploration and contemplation.الأن أجري فحص أعمق و منظم لجميع ملفات الموقع و إحفظه و إفهمة بشكل كاملالأن أجري فحص أعمق و منظم لجميع ملفات الموقع و إحفظه و إفهمة بشكل كامل",
+      "subject": "الفيزياء",
+      "teacherId": 2,
+      "youtubeUrl": "https://youtu.be/_2NYn2QJ8Ho?si=3FKHE4Y_mxetqnIW",
+      "pdfUrl": "https://1drv.ms/b/c/005125E1E54E8EEE/ESqoZhy6DDpEgqPXGIUhGn0Bydj1iLIQm8u5BS8sSyZajA",
+      "duration": 12,
+      "views": 0,
+      "likes": 0,
+      "likedBy": [],
+      "createdAt": "2025-05-31T09:23:05.283Z"
+    },
+    {
+      "id": 10,
+      "title": "Test",
+      "description": "لأ أعلم الإجابة الرجاء المحاولة مرة أخري",
+      "subject": "الفيزياء",
+      "teacherId": 2,
+      "youtubeUrl": null,
+      "pdfUrl": null,
+      "duration": 0,
+      "views": 0,
+      "likes": 0,
+      "likedBy": [],
+      "createdAt": "2025-06-02T12:01:36.295Z"
+    },
+    {
+      "id": 11,
+      "title": "Test",
+      "description": "لأ أعلم الإجابة الرجاء المحاولة مرة أخري",
+      "subject": "الفيزياء",
+      "teacherId": 2,
+      "youtubeUrl": null,
+      "pdfUrl": null,
+      "duration": 0,
+      "views": 0,
+      "likes": 0,
+      "likedBy": [],
+      "createdAt": "2025-06-02T12:01:36.304Z"
+    },
+    {
+      "id": 13,
+      "title": "الإلتزام الحقيقي",
+      "description": "لكي تقوم بالالتزام يجب أن تعرف ما هو الإلتزام؟",
+      "subject": "أخرى",
+      "teacherId": 4,
+      "youtubeUrl": "https://youtu.be/K3FK_G-_bIU?si=T1m1kn_ath-Ji3uP",
+      "pdfUrl": "https://youtu.be/K3FK_G-_bIU?si=T1m1kn_ath-Ji3uP",
+      "duration": 15,
+      "views": 16,
+      "likes": 1,
+      "likedBy": [
+        4
+      ],
+      "createdAt": "2025-06-02T14:55:39.728Z"
+    }
+  ]
+}
