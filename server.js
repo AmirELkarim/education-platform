@@ -2,6 +2,8 @@ const express = require('express');
 const fs = require('fs').promises;
 const path = require('path');
 const bcrypt = require('bcryptjs');
+// إضافة fetch لـ Node.js
+const fetch = require('node-fetch');
 const session = require('express-session');
 
 const app = express();
@@ -22,7 +24,7 @@ app.use(express.static('.'));
 // قراءة وكتابة ملف البيانات
 const DATA_FILE = 'data.json';
 
-async function readData() {
+/*async function readData() {
   try {
     const data = await fs.readFile(DATA_FILE, 'utf8');
     return JSON.parse(data);
@@ -32,10 +34,39 @@ async function readData() {
     await writeData(initialData);
     return initialData;
   }
+}*/
+async function readData() {
+  try {
+    const response = await fetch('http://localhost:3001/data');
+    if (!response.ok) {
+      throw new Error('فشل في جلب البيانات');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('خطأ في قراءة البيانات:', error);
+    return { users: [], lessons: [] };
+  }
 }
 
-async function writeData(data) {
+/*async function writeData(data) {
   await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2), 'utf8');
+}*/
+async function writeData(data) {
+  try {
+    const response = await fetch('http://localhost:3001/data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    
+    if (!response.ok) {
+      throw new Error('فشل في حفظ البيانات');
+    }
+  } catch (error) {
+    console.error('خطأ في كتابة البيانات:', error);
+  }
 }
 
 // تسجيل المستخدمين
